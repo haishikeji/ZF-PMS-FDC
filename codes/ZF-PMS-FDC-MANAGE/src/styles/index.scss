@@ -1,0 +1,418 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "PingFang SC", "Microsoft YaHei", Arial;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  //height: 100%;  不要加，姚政伟备注,有问题问我
+  background-color: #f8fafb;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+.postInfo-container {
+  .avatar-wrapper {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    border-radius: 50%;
+    background-color: #2A8FE3;
+    text-align: center;
+    line-height: 25px;
+  }
+
+  .title {
+    //line-height: 30px;
+  }
+
+  .icon-title {
+    font-size: 10px;
+    //float: left;
+    color: rgba(255, 255, 255, 1);
+    display: inline-block;
+    position: relative;
+    top: -2px;
+  }
+
+  .icon-info {
+    text-align: left;
+    margin-left: 5px;
+    font-size: 16px;
+    padding-top: 10px;
+    font-weight: bold;
+    color: #333333;
+    display: inline-block;
+  }
+}
+.postInfo-container-item {
+  .el-input--small {
+    font-size: 16px;
+  }
+  .el-form-item__label {
+    width: 21px;
+    font-size: 16px;
+    font-weight:450;
+    color: rgba(102, 102, 102, 1);
+    color: #040000;
+    line-height: 16px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .el-input__inner {
+    color: #040000 !important;
+  }
+}
+
+.word-counter {
+  width: 40px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+.analysis-text {
+  color: #242530;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
+
+  .tag {
+    margin-right: 5px;
+    color: #338FFF
+  }
+}
+
+.analysis-text-small {
+  font-size: 14px;
+  text-align: left;
+  margin-top: 3px;
+}
+
+
+.viewTable,.viewTable tr th, .viewTable tr td {
+  border:1px solid #ddd;
+  padding: 5px 10px;
+}
+.viewTable .tdclass{
+  height: 50px;
+}
+.viewTable {
+  width: 90%;
+  border-collapse: collapse; padding:2px;
+  text-align: center;
+}
+.viewTable .title{
+  text-align: left;
+}
+.viewTable .hd-img{
+  position: relative;
+}
+.viewTable .hd-img img{
+  max-width: 100%;
+}
+.viewTable .col-name{
+  width: 200px;
+}
+.viewTable .col-name1{
+  width: 50px;
+}
+.viewTable .el-select,.viewTable .el-date-editor{
+  width: 100%;
+}
+.viewTable .require{
+  color: red;
+}
+
+//main-container全局样式
+.app-container {
+  padding: 10px;
+  min-width: 1680px;
+
+  .title-container {
+    width: 100%;
+    //background-color: white;
+    //border-bottom:1px solid #e4ecf9;
+  }
+}
+
+.task-detail-header {
+  height: 40px;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+
+}
+
+.task-detail-header-one {
+  height: 40px;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: -30px;
+  padding-left: 20px;
+  padding-top: 10px
+}
+
+.task-detail-content {
+  height: 50px;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 2px;
+  padding-top: 10px
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  //margin-top: 30px;
+}
+
+.text-center {
+  text-align: center
+}
+
+//.sub-navbar {
+//  height: 50px;
+//  line-height: 50px;
+//  position: relative;
+//  width: 100%;
+//  text-align: right;
+//  padding-right: 20px;
+//  transition: 600ms ease position;
+//  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+//
+//  .subtitle {
+//    font-size: 20px;
+//    color: #fff;
+//  }
+//
+//  &.draft {
+//    background: #d0d0d0;
+//  }
+//
+//  &.deleted {
+//    background: #d0d0d0;
+//  }
+//}
+.confirmButtonClass {
+  border-radius: 15px;
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-main-div {
+  margin-top: 1px;
+  background-color: white
+}
+
+.filter-container {
+  margin-top: 10px;
+  background-color: white;
+
+  margin-top: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 15px;
+  }
+}
+
+.qrcode {
+  display: inline-block;
+
+  img {
+    width: 132px;
+    height: 132px;
+    background-color: #fff; //设置白色背景色
+    padding: 6px; // 利用padding的特性，挤出白边
+    box-sizing: border-box;
+  }
+}
+.el-tooltip__popper {
+  max-width: 800px;
+
+}
+//refine vue-multiselect plugin
+//.multiselect {
+//  line-height: 16px;
+//}
+//
+//.multiselect--active {
+//  z-index: 1000 !important;
+//}
+
+
+#nprogress .bar {
+  background: #64d9d6 !important; //自定义颜色
+}
+
+.statisticsInfo {
+  margin-top: 12px;
+  margin-bottom: -5px;
+  flex: 1;
+
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    line-height: 35px;
+    margin-bottom: 8px;
+  }
+
+  .menu-2-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .menu-2-item {
+    display: flex;
+    align-items: center;
+    color: #656565;
+    font-size: 12px;
+    width: 230px;
+    height: 101px;
+    border-radius: 3px;
+    padding-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 5px 0px rgba(190, 190, 190, 0.2);
+
+    .text {
+      margin-left: 16px;
+    }
+  }
+}
